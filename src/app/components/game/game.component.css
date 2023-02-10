@@ -1,0 +1,131 @@
+.screen {
+   display: flex;
+   height: 100vh;
+   width: 612px;
+   flex-direction: column;
+   margin: 0 auto;
+   justify-content: center;
+   padding: 4px;
+}
+
+@media only screen and (max-width: 612px) {
+   .screen {
+      width: 100% !important;
+   }
+}
+
+.board {
+   width: 100%;
+   max-height: 604px;
+   max-width: 604px;
+   aspect-ratio: 1/1;
+   border-radius: 24px;
+   padding: 6px;
+   background-color: #6648C4;
+}
+
+.board-slot {
+   padding: 2px;
+   background-color: #3C2978;
+   border-radius: 18px;
+}
+
+.cards {
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+   margin-bottom: 12px;
+   height: 254px;
+}
+
+.wrapper-player-card {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   align-items: center;
+}
+
+.player-card {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: column;
+   background-color: #6648C4;
+   padding: 6px;
+   border-radius: 6px;
+   text-align: center;
+   height: 100%;
+   width: 133px;
+   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.47);
+   -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.47);
+   -moz-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.47);
+}
+
+.score {
+   background-color: #5b41af;
+   padding: 0 12px;
+   font-size: 2rem;
+   border-bottom-left-radius: 6px;
+   border-bottom-right-radius: 6px;
+   text-align: center;
+   border-top: 2px solid #3C2978;
+   width: fit-content;
+   color: whitesmoke;
+}
+
+.symbol {
+   width: 50px;
+   max-width: 100%;
+   display: block;
+}
+
+.player-symbol {
+   background-color: #3C2978;
+   padding: 2px;
+   border-radius: 6px;
+   border: 2px solid #3C2978;
+   width: fit-content;
+   aspect-ratio: 1 / 1
+}
+
+.player-icon {
+   width: 100px;
+   max-width: 100%;
+}
+
+.player-name {
+   margin: 0 0 2px;
+}
+
+.select-symbol {
+   display: flex;
+   width: 100%;
+}
+
+.wrapper-reset {
+   margin-top: auto;
+   padding: 2px;
+   background-color: #6648C4;
+   border-radius: 6px;
+}
+
+.reset-button {
+   width: 50px;
+   height: 50px;
+   max-width: 100%;
+   display: block;
+   min-width: 50px;
+}
+
+.elevation-low {
+   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.47);
+   -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.47);
+   -moz-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.47);
+}
+
+.elevation-high {
+   box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.47);
+   -webkit-box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.47);
+   -moz-box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.47);
+
+}

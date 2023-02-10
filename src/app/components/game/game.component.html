@@ -1,0 +1,66 @@
+<div class="screen">
+   <div class="cards">
+      <div class="wrapper-player-card">
+         <div class="player-card elevation-low">
+            <div class="player-info">
+               <p class="player-name">YOU</p>
+               <img class="player-icon" src="/assets/icons/user.png" alt="User icon" draggable="false">
+            </div>
+            <div class="wrapper-select-symbol" *ngIf="filledSlots === 0">
+               <p style="margin: 0">Select symbol</p>
+               <div class="select-symbol">
+                  <div class="player-symbol" style="margin-right: 6px"
+                       [style.border-color]="symbols.player === 'X' ? '#EA638C' : ' #3C2978'">
+                     <img class="symbol" src="/assets/icons/cross.svg" (click)="this.switchSymbols('X', 'O')"
+                          draggable="false" alt="Cross symbol">
+                  </div>
+                  <div
+                     class="player-symbol"
+                     [style.border-color]="symbols.player === 'O' ? '#EA638C' : ' #3C2978'">
+                     <img class="symbol" src="/assets/icons/circle.svg" (click)="this.switchSymbols('O', 'X')"
+                          draggable="false" alt="Circle symbol">
+                  </div>
+               </div>
+            </div>
+            <div class="player-symbol" *ngIf="filledSlots !== 0">
+               <img class="symbol"
+                    [src]="symbols.player === 'O' ? '/assets/icons/circle.svg' : '/assets/icons/cross.svg'"
+                    draggable="false" alt="Player symbol">
+            </div>
+         </div>
+         <div
+            class="score elevation-high">
+            <p style="margin: 0">{{this.scores.player}}</p>
+         </div>
+      </div>
+      <div class="wrapper-reset">
+         <img title="Reset board" class="reset-button elevation-low" (click)="restartGame()"
+              src="/assets/icons/restart.png" draggable="false" alt="Reset board button">
+      </div>
+      <div class="wrapper-player-card">
+         <div class="player-card elevation-low">
+            <div class="player-info">
+               <p class="player-name">BOT</p>
+               <img class="player-icon" src="/assets/icons/bot.png" alt="Bot icon" draggable="false">
+            </div>
+            <div class="player-symbol">
+               <img class="symbol"
+                    [src]="(symbols.computer === 'O' ? '/assets/icons/circle.svg' : '/assets/icons/cross.svg')"
+                    draggable="false" alt="Bot symbol">
+            </div>
+         </div>
+         <div
+            class="score elevation-high">
+            <p style="margin: 0">{{this.scores.computer}}</p>
+         </div>
+      </div>
+   </div>
+   <table class="board elevation-low">
+      <tr *ngFor="let row of boardWidth; let i = index" [style.height.%]="100 / boardWidth.length">
+         <td class="board-slot elevation-low" #boardSlot *ngFor="let column of boardWidth; let j = index"
+             [attr.data-index]="i * boardWidth.length + j"
+             (click)="setPlayer($event)" [style.width.%]="100 / boardWidth.length"></td>
+      </tr>
+   </table>
+</div>
+
