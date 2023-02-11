@@ -58,7 +58,7 @@ export class GameComponent implements AfterViewInit, OnInit {
    }
 
    setPlayer(event: any) {
-      if (event.target.tagName !== 'TD') {
+      if (event.target.tagName !== 'DIV') {
          return;
       }
       if (
@@ -90,7 +90,7 @@ export class GameComponent implements AfterViewInit, OnInit {
          image.src = '/assets/icons/circle.svg';
       }
       if (image) {
-         image.setAttribute('style', 'display: block');
+         image.setAttribute('style', 'height: 100%; display: block');
          this.renderer.appendChild(slot.element, image);
       }
       slot.playerValue = symbol;
@@ -118,7 +118,7 @@ export class GameComponent implements AfterViewInit, OnInit {
             }
          }
          if (gameEnded) {
-            this.endGame(indexes);
+            this.changeEndSymbolOpacity(indexes);
             return symbol;
          }
       }
@@ -146,7 +146,7 @@ export class GameComponent implements AfterViewInit, OnInit {
             }
          }
          if (gameEnded) {
-            this.endGame(indexes);
+            this.changeEndSymbolOpacity(indexes);
             return symbol;
          }
       }
@@ -168,7 +168,7 @@ export class GameComponent implements AfterViewInit, OnInit {
             }
          }
          if (gameEnded) {
-            this.endGame(indexes);
+            this.changeEndSymbolOpacity(indexes);
             return symbol;
          }
       }
@@ -187,7 +187,7 @@ export class GameComponent implements AfterViewInit, OnInit {
             }
          }
          if (gameEnded) {
-            this.endGame(indexes);
+            this.changeEndSymbolOpacity(indexes);
             return symbol;
          }
       }
@@ -207,7 +207,7 @@ export class GameComponent implements AfterViewInit, OnInit {
          return;
       }
       if (this.filledSlots === this.boardSlots.length) {
-         this.endGame([]);
+         this.changeEndSymbolOpacity([]);
          this.audios.tie.play();
          this.winner = 'tie';
          return;
@@ -255,7 +255,7 @@ export class GameComponent implements AfterViewInit, OnInit {
       this.symbols.computer = computerSymbol;
    }
 
-   endGame(indexes: number[]) {
+   changeEndSymbolOpacity(indexes: number[]) {
       for (let i = 0; i < this.boardSlots.length; i++) {
          if (indexes.includes(i)) {
             continue;
