@@ -1,9 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-table {
-   border-collapse: separate;
-   border-spacing: 12px;
-}
-
 * {
    font-family: 'Roboto', sans-serif;
    box-sizing: border-box;
