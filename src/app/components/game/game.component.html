@@ -59,7 +59,7 @@
       <div class="board-row" *ngFor="let row of boardWidth; let i = index" [style.height.%]="100 / boardWidth.length"
            [style.max-height.%]="100 / boardWidth.length">
          <div class="board-slot elevation-low" #boardSlot *ngFor="let column of boardWidth; let j = index"
-              (click)="setPlayer($event)"
+              (click)="playerTurn($event)"
               [attr.data-index]="i * boardWidth.length + j"
               [style.width.%]="100 / boardWidth.length"
               [style.max-width.%]="100 / boardWidth.length">
