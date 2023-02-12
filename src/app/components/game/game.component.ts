@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
+//Associates board slots and their symbol
 class BoardSlot {
    playerValue: string = '';
    element!: HTMLTableCellElement;

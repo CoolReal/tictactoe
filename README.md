@@ -6,8 +6,6 @@ Simple TicTacToe game.
 
 ## Setup
 
-Requires Angular CLI to be globally installed
-
 1. `npm install`
 
 
